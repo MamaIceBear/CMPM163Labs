@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lab 3: Shaders in Three.js</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+	</head>
+	<body>
+		<script src="../three.js-master/build/three.js"></script>
+		<script>
+
+            // setup the scene
+      		var scene = new THREE.Scene();
+      		var camera = new THREE.PerspectiveCamera(75, 
+                window.innerWidth/window.innerHeight, 0.1, 1000);
+      		var renderer = new THREE.WebGLRenderer();
+      		renderer.setSize(window.innerWidth, window.innerHeight);
+      		document.body.appendChild(renderer.domElement);
+			camera.position.z = 5;
+            
+            // makes each cube into separate objects
+            var geometry1 = new THREE.BoxGeometry();
+            var geometry2 = new THREE.BoxGeometry();
+            var geometry3 = new THREE.BoxGeometry(1, 1, 1);
+            var geometry4 = new THREE.BoxGeometry(1, 1, 1);
+
+            // setup the first cube (PHONG)
+            var mat1 = new THREE.MeshPhongMaterial( { color: 0xdddddd, 
+                specular: 0x00ff00, shininess: 30 });
+            var cube1 = new THREE.Mesh( geometry1, mat1 );
+            scene.add(cube1);
+            
+            // setup the second cube (WIREFRAME)
+            var mat2 = new THREE.MeshBasicMaterial( { color: 0x27D2E3, wireframe: true } );
+            var cube2 = new THREE.Mesh( geometry2, mat2 );
+            cube2.position.x = -2;
+            scene.add(cube2);
+
+			// add the light
+			var light = new THREE.PointLight(0xffffff, 1, 1000);
+			light.position.set(10, 10, 10);
+            scene.add(light);
+
+            THREE.Cache.enabled = true;
+            var count1 = 0, count2 = 0;
+            var vshader;
+
+            // custom shader cube 1
+            var material1, mesh1;
+            var fshader1;
+            function addCoolCube1() 
+            {
+                if(count1 == 2) 
+                {
+                    let uniforms = 
+                    {
+                        colorA: {type: 'vec3', value: new THREE.Color(0x74ebd5)},
+		                colorB: {type: 'vec3', value: new THREE.Color(0xACB6E5)},
+	                };
+                    material1 =  new THREE.ShaderMaterial(
+                    {
+                        uniforms: uniforms,
+                        fragmentShader: fshader1,
+                        vertexShader: vshader,
+                        precision: "mediump"
+                    });
+                    mesh1 = new THREE.Mesh(geometry3, material1);
+                    mesh1.position.x = 2;
+                    scene.add(mesh1);
+                }	
+            }
+
+            // custom shader cube 2
+            var material2, mesh2;
+            var fshader2;
+            function addCoolCube2() 
+            {
+                if(count2 == 2) 
+                {
+                    let uniforms = 
+                    {
+                        colorA: {type: 'vec3', value: new THREE.Color(0xFF0000)},
+                        colorB: {type: 'vec3', value: new THREE.Color(0x00FF00)},
+	                };
+                    material2 =  new THREE.ShaderMaterial(
+                    {
+                        uniforms: uniforms,
+                        fragmentShader: fshader2,
+                        vertexShader: vshader,
+                        precision: "mediump"
+                    });
+                    mesh2 = new THREE.Mesh(geometry4, material2);
+                    mesh2.position.y = 2;
+                    scene.add(mesh2);
+                }	
+            }
+            
+            var loader1 = new THREE.FileLoader();
+            
+            loader1.load('shaders/vertexShader.vert',
+            // onLoad callback
+            function (data) 
+            {
+			    console.log(data); // output the text to the console
+			    vshader = data;
+			    count1 += 1;
+                addCoolCube1();
+		    },
+            // onProgress callback
+            function (xhr) 
+            {
+		        console.log((xhr.loaded/xhr.total * 100)+ '% loaded VERTEX');
+	        },
+            // onError callback
+            function (err) 
+            {
+		        console.error('An error happened');
+            });
+            
+            var loader2 = new THREE.FileLoader();
+            loader2.load('shaders/vertexShader.vert',
+            // onLoad callback
+            function (data) 
+            {
+			    console.log(data); // output the text to the console
+			    vshader = data;
+			    count2 += 1;
+                addCoolCube2();
+		    }  ,
+            // onProgress callback
+            function (xhr) 
+            {
+		        console.log((xhr.loaded/xhr.total * 100)+ '% loaded VERTEX');
+	        },
+            // onError callback
+            function (err) 
+            {
+		        console.error('An error happened');
+            });
+
+            //Fragment Shader 1
+            loader1.load('shaders/fragmentShader.frag',
+            // onLoad callback
+            function (data) 
+            {
+			    console.log(data); // output the text to the console
+			    fshader1 = data;
+			    count1 += 1;
+			    addCoolCube1(); // we will write this method
+		    },
+            // onProgress callback
+            function (xhr) 
+            {
+                console.log((xhr.loaded/xhr.total * 100)+ '% loaded Frag Shader 1');
+            },
+            // onError callback
+            function (err) 
+            {
+                console.error('An error happened');
+            });
+
+            //Fragment Shader 2
+            loader2.load('shaders/fragmentShader2.frag',
+            // onLoad callback
+            function (data) 
+            {
+			    console.log(data); // output the text to the console
+			    fshader2 = data;
+			    count2 += 1;
+			    addCoolCube2(); // we will write this method
+		    },
+            // onProgress callback
+            function (xhr) 
+            {
+                console.log((xhr.loaded/xhr.total * 100)+ '% loaded Frag Shader 2');
+            },
+            // onError callback
+            function (err) 
+            {
+                console.error('An error happened');
+            });
+
+            function animate() 
+            {
+                requestAnimationFrame(animate);
+                //
+				geometry1.rotateX(0.01);
+                geometry1.rotateY(0.01);
+                geometry2.rotateX(0.02);
+                geometry2.rotateY(0.02);
+                geometry3.rotateX(0.03);
+                geometry3.rotateY(0.03);
+                geometry4.rotateX(0.04);
+				geometry4.rotateY(0.04);
+                renderer.render(scene, camera);
+			}
+			animate();
+
+
+		</script>
+	</body>
+</html>
