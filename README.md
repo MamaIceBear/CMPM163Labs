@@ -18,4 +18,4 @@ light-reflection intensity of 30 as shown within the video tutorial. Something I
 hit with "UV" light.
 
 MIDDLE-TOP (Rainbow): I duplicated fragment shader code and changed it by removing the mix function, which causes interpolation, and the two uniform colors. In gl_FragColor I just placed the whole position of the vUv variable like so... "gl_FragColor = vec4(vUv, 1.0);". I then proceeded to make a new variant of the addCoolCube function to link with the new
-fragment shader code.
+fragment shader code. I used the same vertex shader code when loading.
