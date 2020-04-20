@@ -8,12 +8,14 @@ LAB3 FULL: https://drive.google.com/file/d/1yEMPowq-exT7Upv7oBxAS2yofuYAshoV/vie
 
 How I created them:
 
-LEFT (Wireframe): I created a basic mesh material in which I set a cyan color and turned on the wireframe mode.
+LEFT (Wireframe): I created a basic mesh material in which I set a cyan color and turned on the wireframe mode. I inspected the source code from the THREE.JS WEB_GL MATERIALS 
+example learn how to make this.
 
 RIGHT (Two-Color-Interpolation): I interpolated between "aquamarine" and "perano" to make a smooth tealish gradient as shown within the video tutorial.
 
 MIDDLE-BOTTOM (Phong): I created a phong material where its color is gray overall and I made its specular, the color when light shines on the material, green with a 
-light-reflection intensity of 30 as shown within the video tutorial.
+light-reflection intensity of 30 as shown within the video tutorial. Something I would like to create in the future is to make a material that has unique specular when
+hit with "UV" light.
 
 MIDDLE-TOP (Rainbow): I duplicated fragment shader code and changed it by removing the mix function, which causes interpolation, and the two uniform colors. In gl_FragColor I just placed the whole position of the vUv variable like so... "gl_FragColor = vec4(vUv, 1.0);". I then proceeded to make a new variant of the addCoolCube function to link with the new
 fragment shader code.
