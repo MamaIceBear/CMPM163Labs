@@ -37,13 +37,15 @@
             var mat2 = new THREE.MeshBasicMaterial( { color: 0x27D2E3, wireframe: true } );
             var cube2 = new THREE.Mesh( geometry2, mat2 );
             cube2.position.x = -2;
+            cube2.position.y = 1;
             scene.add(cube2);
 
 			// add the light
 			var light = new THREE.PointLight(0xffffff, 1, 1000);
 			light.position.set(10, 10, 10);
             scene.add(light);
-
+            
+            //set counts and vertex shader
             THREE.Cache.enabled = true;
             var count1 = 0, count2 = 0;
             var vshader;
@@ -69,6 +71,7 @@
                     });
                     mesh1 = new THREE.Mesh(geometry3, material1);
                     mesh1.position.x = 2;
+                    mesh1.position.y = 1;
                     scene.add(mesh1);
                 }	
             }
@@ -80,14 +83,8 @@
             {
                 if(count2 == 2) 
                 {
-                    let uniforms = 
-                    {
-                        colorA: {type: 'vec3', value: new THREE.Color(0xFF0000)},
-                        colorB: {type: 'vec3', value: new THREE.Color(0x00FF00)},
-	                };
                     material2 =  new THREE.ShaderMaterial(
                     {
-                        uniforms: uniforms,
                         fragmentShader: fshader2,
                         vertexShader: vshader,
                         precision: "mediump"
@@ -108,7 +105,7 @@
 			    vshader = data;
 			    count1 += 1;
                 addCoolCube1();
-		    },
+		    }  ,
             // onProgress callback
             function (xhr) 
             {
@@ -183,10 +180,9 @@
                 console.error('An error happened');
             });
 
-            function animate() 
-            {
-                requestAnimationFrame(animate);
-                //
+
+			function animate() {
+				requestAnimationFrame(animate);
 				geometry1.rotateX(0.01);
                 geometry1.rotateY(0.01);
                 geometry2.rotateX(0.02);
