@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lab 4: Textures & Normal Maps</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+	</head>
+	<body>
+		<script src="../three.js-master/build/three.js"></script>
+		<script>
+			// setup the scene
+      		var scene = new THREE.Scene();
+      		var camera = new THREE.PerspectiveCamera(75, 
+            window.innerWidth/window.innerHeight, 0.1, 1000);
+      		var renderer = new THREE.WebGLRenderer();
+      		renderer.setSize(window.innerWidth, window.innerHeight);
+      		document.body.appendChild(renderer.domElement);
+			camera.position.z = 5;
+			
+			// setup the cube
+			var geometry = new THREE.BoxGeometry();
+
+			var texture = THREE.ImageUtils.loadTexture("161b.JPG");
+			var normMap = THREE.ImageUtils.loadTexture("161_norm.JPG");
+			var material = new THREE.MeshPhongMaterial({map: texture, normalMap: normMap});
+      		var cube = new THREE.Mesh(geometry, material);
+     		scene.add(cube);
+
+			material = new THREE.MeshPhongMaterial( { map: texture });
+			var cube2 = new THREE.Mesh(geometry, material);
+			scene.add(cube2);
+			cube2.position.set(-2, 0, 0);
+
+			texture = THREE.ImageUtils.loadTexture("156.JPG");
+			normMap = THREE.ImageUtils.loadTexture("156_norm.JPG");
+			material = new THREE.MeshPhongMaterial({map: texture, normalMap: normMap});
+			var cube3 = new THREE.Mesh(geometry, material);
+			scene.add(cube3);
+			cube3.position.set(2, 0, 0);
+
+			// add the light
+			var light = new THREE.PointLight(0xffffff, 1, 1000);
+			light.position.set(10, 0, 10);
+			scene.add(light);
+
+			var geometry1, material1, mesh1;
+			var geometry2, material2, mesh2;
+
+			function addTextureShaderCube1() {
+				if(count1 == 2) {
+					var uniforms = {texture1: { type: "t", value: 
+					THREE.ImageUtils.loadTexture("154.JPG")}};
+
+					geometry1 = new THREE.BoxGeometry(1, 1, 1);
+					material1 =  new THREE.ShaderMaterial({
+						uniforms: uniforms,
+						fragmentShader: fshader1,
+						vertexShader: vshader1,
+						precision: "mediump"
+					});
+
+					mesh1 = new THREE.Mesh(geometry1, material1);
+					mesh1.position.set(2,2,0);
+					scene.add(mesh1);
+				}
+			}
+
+			function addTextureShaderCube2() {
+				if(count2 == 2) {
+					var uniforms = {texture2: { type: "t", value: 
+					THREE.ImageUtils.loadTexture("176.JPG")}};
+
+					geometry2 = new THREE.BoxGeometry(1, 1, 1);
+					material2 =  new THREE.ShaderMaterial({
+						uniforms: uniforms,
+						fragmentShader: fshader2,
+						vertexShader: vshader2,
+						precision: "mediump"
+					});
+
+					mesh2 = new THREE.Mesh(geometry2, material2);
+					mesh2.position.set(0,2,0);
+					scene.add(mesh2);
+				}
+			}
+
+			THREE.Cache.enabled = true;
+			var count1 = 0, count2 = 0;
+			var loader1 = new THREE.FileLoader(), loader2 = new THREE.FileLoader();
+			var fshader1, vshader2;
+
+      		loader1.load('shaders/vertexShader.vert',
+      		// onLoad callback
+      		function (data) {
+      			console.log(data); // output the text to the console
+      			vshader1 = data;
+      			count1 += 1;
+      			addTextureShaderCube1();
+      		},
+      		// onProgress callback
+      		function (xhr) {
+      			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      		},
+     		// onError callback
+      		function (err) {
+      			console.error('An error happened');
+      		});
+
+			loader1.load('shaders/fragmentShader.frag',
+      		// onLoad callback
+      		function (data) {
+      			console.log(data); // output the text to the console
+      			fshader1 = data;
+      			count1 += 1;
+      			addTextureShaderCube1();
+      		},
+      		// onProgress callback
+      		function (xhr) {
+      			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      		},
+			// onError callback
+      		function (err) {
+      			console.error('An error happened');
+      		});
+
+			loader2.load('shaders/vertexShader2.vert',
+      		// onLoad callback
+      		function (data) {
+      			console.log(data); // output the text to the console
+      			vshader2 = data;
+      			count2 += 1;
+				addTextureShaderCube2();
+      		},
+      		// onProgress callback
+      		function (xhr) {
+      			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      		},
+     		// onError callback
+      		function (err) {
+      			console.error('An error happened');
+      		});
+
+			loader1.load('shaders/fragmentShader2.frag',
+      		// onLoad callback
+      		function (data) {
+      			console.log(data); // output the text to the console
+      			fshader2 = data;
+      			count2 += 1;
+				addTextureShaderCube2();
+      		},
+      		// onProgress callback
+      		function (xhr) {
+      			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      		},
+			// onError callback
+      		function (err) {
+      			console.error('An error happened');
+      		});
+
+			//Rotates on the Y and Z diagonal
+			var rotationAxis = new THREE.Vector3(0,1,1).normalize();
+			var rotationPoint = new THREE.Vector3(0,0,0);
+
+			function animate() {
+				rotation(light, rotationPoint, rotationAxis, 0.05);
+				
+				requestAnimationFrame(animate);
+				renderer.render(scene, camera);
+			}
+			animate();
+
+			function rotation(object, point, axis, theta) //Light Rotation
+			{
+				object.position -= point;
+				object.position.applyAxisAngle(axis, theta);
+				object.position += point;
+				object.rotateOnAxis(axis, theta);
+			}
+		</script>
+	</body>
+</html>
