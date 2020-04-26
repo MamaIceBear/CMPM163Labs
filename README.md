@@ -53,5 +53,5 @@ I made a new fragment shader and a vertex shader file. The new vertex shader is 
 
 Note: I made the point light rotate within a circular motion.
 
-REFERENCE OF THE BOTTOM-LEFT QUADRANT FROM TUTORIAL:
-![](images/Reference.png)
+REFERENCE TO THE TEXTURE IN THE BOTTOM-LEFT QUADRANT FROM THE TUTORIAL:
+![](images/Reference.png) 
