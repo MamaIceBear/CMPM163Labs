@@ -6,7 +6,7 @@ void main() {
 	vec2 modifyUV = vUv; //vUv components are const and can't be modified, so just copy it into another vec2
 	float tilesize = 2.0;
 	float segmentedUV = 1.0/tilesize;
-	for(int i = 1; i < 2; i++)
+	for(int i = 1; i < 2; i++) //I can control how many faces can be implemented on my cube
     {
 		if(modifyUV.x > segmentedUV)
 		{
