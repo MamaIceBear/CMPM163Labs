@@ -32,11 +32,11 @@ LAB4 Texture Cube Video: https://drive.google.com/file/d/18jCDACmrTjl-Z2Fjs_HoH4
 LAB4 Questions:
 a. What is the formula given a u value of the uv coordinate (a value between 0 and 1), I get the x value of the pixel to 
 sample from in this 8x8 texture?
-The formula is x = u (u-value from uv coordinate) * texture pixel size (in this case it's 8)
+The formula is x = (u * texture pixel size). The texture pixel size is 8 in this case.
 
 b. What is the formula given a v value of the uv coordinate (a value between 0 and 1), I get the y value of the pixel to 
 sample from in this 8x8 texture?
-The formula is y = v (v-value from uv coordinate) * texture pixel size (in this case it's 8)
+The formula is y = 8 - (v * texture pixel size). The texture pixel size is 8 in this case.
 
 c. What color is sampled from the texture at the uv coordinate (0.375, 0.25)? (sample from the image based on the number your 
 formula gives you i.e. (1, 0) is blue)
