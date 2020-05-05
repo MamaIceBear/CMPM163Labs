@@ -80,4 +80,13 @@ REFERENCE TO THE TEXTURE IN THE BOTTOM-LEFT QUADRANT FROM THE TUTORIAL:
 
 ![](images/Reference.png) 
 
+Lab 5 video: https://drive.google.com/file/d/1dsFCjmykk7bmuJk0al_ZvgNy-YjRGeu1/view?usp=sharing
+
+Modifications in which I changed:
+1. I changed the particles' color and sizes by tuning values within the emission, collision, and shape settings.
+2. I changed the skybox into a spacey background by clicking on the windows menu above and switching the skybox material.
+3. I tweaked the racing kart's material into something more metallic through the inspector.
+4. I switched the material color of the clouds to brown to make them seem like asteroids through the inspector.
+5. I have my player interpolate between 10 different colors using a C# script I written up called "ColorLerper".
+
 
