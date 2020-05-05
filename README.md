@@ -80,7 +80,7 @@ REFERENCE TO THE TEXTURE IN THE BOTTOM-LEFT QUADRANT FROM THE TUTORIAL:
 
 ![](images/Reference.png) 
 
-I have chosen to do Part 1 of Lab 5 the Unity Project
+I have chosen to do Part 1 of Lab 5 the Unity Kart Project
 
 Lab 5 Video: https://drive.google.com/file/d/1dsFCjmykk7bmuJk0al_ZvgNy-YjRGeu1/view?usp=sharing
 
