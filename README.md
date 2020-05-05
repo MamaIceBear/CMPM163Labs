@@ -82,7 +82,7 @@ REFERENCE TO THE TEXTURE IN THE BOTTOM-LEFT QUADRANT FROM THE TUTORIAL:
 
 I have chosen to do Part 1 of Lab 5 the Unity Kart Project
 
-Lab 5 Video: https://drive.google.com/file/d/1dsFCjmykk7bmuJk0al_ZvgNy-YjRGeu1/view?usp=sharing
+Lab 5 Video: https://drive.google.com/file/d/1qOQx1VPbyqdWEarxXpaIxctWHHCvQ9IX/view?usp=sharing
 
 Modifications in which I changed:
 1. I changed the particles' color and sizes by tuning values within the emission, collision, and shape settings.
