@@ -123,5 +123,6 @@ SKYBOX:
 For the skybox, I downloaded a free asset from the unity store called "Cope! Free Skybox Pack" and applied the material within the renderer settings. I chose the mountain background from the pack because I thought it looked very beautiful. 
 
 SCREENSHOT OF WHOLE SCENE:
+Here is the scene shot with my material object, my two textured objects, my 4 different light sources color-coded, and my new skybox.
 
 ![](images/Unity.png)
