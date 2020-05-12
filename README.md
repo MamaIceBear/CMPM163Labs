@@ -119,6 +119,14 @@ TEXTURE OBJECTS:
 One texture object I made was a wooden crate in which I used a texture and normal map that I downloaded off a free asset website and applied both onto a 3D cube.
 The other texture object I made was a tiled floor in which I made a 3D plane (a cube squished down) and had the texture tile repeat 3 by 3 times over the plane. I got the free texture online as well. 
 
+Wood:
+
+![](images/crate.jpg)
+
+Stone Tile:
+
+![](images/Stone.jpg)
+
 SKYBOX:
 For the skybox, I downloaded a free asset from the unity store called "Cope! Free Skybox Pack" and applied the material within the renderer settings. I chose the mountain background from the pack because I thought it looked very beautiful. 
 
