@@ -107,9 +107,15 @@ MATERIAL OBJECT:
 
 My example material is stained glass. I replicated this material in Unity by creating a standard shader material and changed its rendering property to transparent. I then adjusted material's alpha to "0" and increase it's smoothness to get that see-through look. I finally placed a glass stain normal map onto it to create the bumpiness as a finishing touch.
 
-![](images/Stained.jpg) 
+Reference:
+![](images/Stained.jpg)
+
+Unity:
+![](images/UnityGlass.png)
 
 TEXTURE OBJECT:
-
+One texture object I made was a wooden crate in which I used a texture and normal map in which I downloaded off of Google images and applied both onto a 3D cube.
+The other texture object I made was a tiled floor in which I made a 3D plane (a cube squished down) and had the texture tile repeat 3 by 3 times over the plane. I got the texture off of google as well which indicated to itself that it was free. 
 
 SKYBOX:
+For the skybox I downloaded a free asset from the unity store and applied the material within the renderer settings. I chose the mountain background from the pack because I thought it looked very beautiful. 
