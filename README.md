@@ -91,4 +91,25 @@ Modifications in which I changed:
 4. I switched the material color of the clouds to brown to make them seem like asteroids through the inspector.
 5. I have my player interpolate between 10 different colors using a C# script I written up called "ColorLerper".
 
+Lab 6 Explanations by Sections
 
+LIGHTS:
+
+Point Light (Green)- This is a light source in which one can set it's position anywhere within 3D space. Changing its rotation is useless because it's property has it illuminate in all directions equally. It behaves like a lightbulb.
+
+Spot Light (Blue)- This is light source that illuminates within a conical angle. Thus, it is essentially a "spotlight" without the actual physical lamp. The light's direction is affected by position and rotation.
+
+Directional Light (Yellow)- This light source behaves like the sun. It affects all objects within the scene through it's rotational property. Changing it's position has no effect within the scene.
+
+Area Light (Red)- Only works if there are lightmaps. It shines within a shape that is assigned to it. In this case, we are shining the light within a rectangular plane.
+
+MATERIAL OBJECT:
+
+My example material is stained glass. I replicated this material in Unity by creating a standard shader material and changed its rendering property to transparent. I then adjusted material's alpha to "0" and increase it's smoothness to get that see-through look. I finally placed a glass stain normal map onto it to create the bumpiness as a finishing touch.
+
+![](images/Stained.jpg) 
+
+TEXTURE OBJECT:
+
+
+SKYBOX:
