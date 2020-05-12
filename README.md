@@ -98,13 +98,13 @@ Explanation by sections-
 
 LIGHTS:
 
-Point Light (Green)- This is a light source in which one can set it's position anywhere within 3D space. Changing its rotation is useless because it's property has it illuminate in all directions equally. It behaves like a lightbulb.
+Point Light (Green)- This is a light source in which one can set it's position anywhere within 3D space. Changing its rotation is useless because the light illuminates in all directions equally. It behaves like a lightbulb.
 
-Spot Light (Blue)- This is light source that illuminates within a conical angle. Thus, it is essentially a "spotlight" without the actual physical lamp. The light's direction is affected by position and rotation.
+Spot Light (Blue)- This is light source that illuminates within a conical shape. One could change the light source's orientation to have it point within various angles. Thus, the light's direction is affected by its local position and rotation. Overall, this light source is essentially a "spotlight" without the actual physical lamp attached above.
 
-Directional Light (Yellow)- This light source behaves like the sun. It affects all objects within the scene through it's rotational property. Changing it's position has no effect within the scene.
+Directional Light (Yellow)- This light source behaves like the sun. It affects all objects within the scene through it's rotational property. Changing it's position has no effect within the scene as again the light affects everything within a global scale.
 
-Area Light (Red)- Only works if there are lightmaps. It shines within a shape that is assigned to it. In this case, we are shining the light within a rectangular plane.
+Area Light (Red)- Only works if there are lightmaps. It shines within a shape that is assigned to it. In this case, we are shining the light within a rectangular plane. Changing the planes width and height corresponds to the changes of its illumination.
 
 MATERIAL OBJECT:
 
