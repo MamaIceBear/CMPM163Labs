@@ -91,7 +91,10 @@ Modifications in which I changed:
 4. I switched the material color of the clouds to brown to make them seem like asteroids through the inspector.
 5. I have my player interpolate between 10 different colors using a C# script I written up called "ColorLerper".
 
-Lab 6 Explanations by Sections
+Lab 6
+I did Part 1 the Unity portion of the lab.
+
+Explanation by sections-
 
 LIGHTS:
 
