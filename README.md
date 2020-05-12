@@ -124,4 +124,4 @@ For the skybox, I downloaded a free asset from the unity store called "Cope! Fre
 
 SCREENSHOT OF WHOLE SCENE:
 
-![](images/Unity.jpg)
+![](images/Unity.png)
