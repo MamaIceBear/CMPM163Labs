@@ -108,9 +108,11 @@ MATERIAL OBJECT:
 My example material is stained glass. I replicated this material in Unity by creating a standard shader material and changed its rendering property to transparent. I then adjusted material's alpha to "0" and increase it's smoothness to get that see-through look. I finally placed a glass stain normal map onto it to create the bumpiness as a finishing touch.
 
 Reference:
+
 ![](images/Stained.jpg)
 
 Unity:
+
 ![](images/UnityGlass.png)
 
 TEXTURE OBJECT:
