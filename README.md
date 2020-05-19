@@ -149,7 +149,7 @@ Clouds- I followed the vertex displacement tutorial as instructed by the lab doc
 
 Mountains- I mainly used a Voronoi node to displace each vertice's y coordinates by a random amount. I implemented this shader on a plane to create a mountain range as tasked by the lab doc.
 
-Water- Instead of following the video linked within the doc, I found a similar video that replicates the same wave effect (https://www.youtube.com/watch?v=l5dbSS9BcqY). I created an unlit shader material and edit the code to have each vertices interpolate based on the x and z position of the object. I then proceeded add a sine wave variable to have the vertices move over time. Thus, a smooth wave motion is created.
+Water- Instead of following the video linked within the doc, I found a similar video that replicates the same wave effect (https://www.youtube.com/watch?v=l5dbSS9BcqY). I created an unlit shader material and edit the shader code in Visual Studios to have each vertices interpolate based on the x and z coordinates of the object's world position. I then proceeded add a sine wave variable to have the vertices move over time. Thus, a smooth wave motion is created.
 
 Boats- I downloaded the paper boats off of the Unity Asset Store for free (credits to creator Rajat Verma). I added the prefabs into the scene with their included material atlas. I then proceeded to create a script that would give each boat buoyancy to imitate that they are floating on top of the water. I achieved this by utilizing the rigidbody component. 
 
