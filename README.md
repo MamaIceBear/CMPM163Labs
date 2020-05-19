@@ -137,3 +137,21 @@ SCREENSHOT OF WHOLE SCENE:
 Here is the scene shot with my material object, my two textured objects, my 4 different light sources color-coded, and my new skybox.
 
 ![](images/Unity.png)
+
+Lab 7
+I worked on Part 1 the Unity Mesh Manipulation
+
+Video Link to Scene: https://drive.google.com/file/d/1VgEdA_QPUz7cqgS31Um9T0lWxMd8YI9w/view?usp=sharing
+
+Breakdown of how I made my scene:
+
+Clouds- I followed the vertex displacement tutorial as instructed by the lab doc and transformed my "noise distorted mesh" into a cloud by changing the PBR master node to be transparent and it's albedo to be white.
+
+Mountains- I mainly used a Voronoi node to displace each vertice's y coordinates by a random amount. I implemented this shader on a plane to create a mountain range as tasked by the lab doc.
+
+Water- Instead of following the video linked within the doc, I found a similar video that replicates the same wave effect (https://www.youtube.com/watch?v=l5dbSS9BcqY). I created an unlit shader material and edit the code to have each vertices interpolate based on the x and z position of the object. I then proceeded add a sine wave variable to have the vertices move over time. Thus, a smooth wave motion is created.
+
+Boats- I downloaded the paper boats off of the Unity Asset Store for free (credits to creator Rajat Verma). I added the prefabs into the scene with their included material atlas. I then proceeded to create a script that would give each boat buoyancy to imitate that they are floating on top of the water. I achieved this by utilizing the rigidbody component. 
+
+Partner:
+I did contact my partner through discord and I exclaimed to them that I would be working on this lab by myself. However, I did offer them to ask me any questions whether it was about Unity or Shader Graphs. So far, we did not require any assistance from one another at all. I did send them the link to the same video that showcased my scene, but they have not gotten back to me yet. Thus, I can't really talk about creative processes.
