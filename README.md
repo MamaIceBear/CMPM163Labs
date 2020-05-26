@@ -155,3 +155,40 @@ Boats- I downloaded the paper boats off of the Unity Asset Store for free (credi
 
 Partner:
 I did contact my partner through discord and I exclaimed to them that I would be working on this lab by myself. However, I did offer them to ask me any questions whether it was about Unity or Shader Graphs. So far, we did not require any assistance from one another at all. I did send them the link to the same video that showcased my scene, but they have not gotten back to me yet. Thus, I can't really talk about creative processes.
+
+Lab 8
+I worked on Part 1 the Unity City Procedural Generation
+
+Inspiration: I was inspired by the various medieval cities from early Europe. And I have played various RPG-like video games which set my bias of what city to build for this project.
+
+Inspired Picture 1:
+
+![](images/Medieval1.jpg)
+
+Inspired Picture 2:
+
+![](images/Medieval2.jpg)
+
+Inspired Picture 3:
+
+![](images/Medieval3.jpg)
+
+What I Changed/Implemnented: To get the images below I started off with replacing the prefabs within the game objects array. I found a free asset pack off the unity store called the "FREE Medieval Structure Kit" create by Ferocious Industries in which I got cool looking prefabs. I then changed the code a bit to give each house a random rotation to make it look a bit more natural. I also applied a seamless grass texture to create a sense of "open space". I also implemented ingame moving camera which the user could use to navigate through the buildings. It uses WASD or the arrow keys to move the camera's position, mouse wheel to zoom in and out, and the Q and E keys to rotate. I chose an 8x8 grid of houses as I found that as the sweet spot to reduce the lag when running the project.
+
+Random City 1:
+
+![](images/House1.jpg)
+
+Random City 2:
+
+![](images/House1.jpg)
+
+Random City 3:
+
+![](images/House1.jpg)
+
+Close Up Of House Models:
+
+![](images/CloseUpHouse.jpg)
+
+Partner: I contacted my partner, but they were not able to respond at this current time. Thus, I cannot answer the partner questions.
