@@ -191,4 +191,9 @@ Close Up Of House Models:
 
 ![](images/CloseUpHouse.jpg)
 
-Partner: I contacted my partner, but they were not able to respond at this current time. Thus, I cannot answer the partner questions.
+Partner: 
+1. They did the Part 2 three.js version of the lab
+2. The most challenging part was to figure out how to make decent looking rivers and grass areas. And to texture map the buildings correctly.
+3. The most interesting part for them was that they played with the perlin noise effect to get the right natural look they wanted.
+
+Note: We did not really need to help each other as we both went solo on the lab. Also, we worked on different parts of the lab.
