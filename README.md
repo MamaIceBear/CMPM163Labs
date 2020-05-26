@@ -197,3 +197,7 @@ Partner:
 3. The most interesting part for them was that they played with the perlin noise effect to get the right natural look they wanted.
 
 Note: We did not really need to help each other as we both went solo on the lab. Also, we worked on different parts of the lab.
+
+Their Screenshot:
+
+![](images/PartnerLab8.jpg)
